@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.Domain", "JobsList
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.Infrastructure", "JobsList.Infrastructure\JobsList.Infrastructure.csproj", "{C807AB31-8778-4A25-9744-53631F05E70E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.API", "JobsList.API\JobsList.API.csproj", "{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C807AB31-8778-4A25-9744-53631F05E70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C807AB31-8778-4A25-9744-53631F05E70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C807AB31-8778-4A25-9744-53631F05E70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
