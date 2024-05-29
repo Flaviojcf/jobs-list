@@ -2,9 +2,9 @@
 
 namespace JobsList.Domain.Entities
 {
-    public sealed class Job : BaseEntity
+    public sealed class Jobs : BaseEntity
     {
-        public Job(string title, string description, string location, decimal salary)
+        public Jobs(string title, string description, string location, decimal salary)
         {
             ValidateDomain(title, description, location, salary);
             Title = title;
@@ -35,6 +35,7 @@ namespace JobsList.Domain.Entities
             Description = description;
             Location = location;
             Salary = salary;
+            UpdatedAt = DateTime.Now;
         }
 
         private static void ValidateDomain(string title, string description, string location, decimal salary)
