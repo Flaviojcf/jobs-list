@@ -37,7 +37,7 @@ namespace JobsList.Domain.Entities
             Salary = salary;
         }
 
-        public void ValidateDomain(string title, string description, string location, decimal salary)
+        private static void ValidateDomain(string title, string description, string location, decimal salary)
         {
             DomainExceptionValidation.When(string.IsNullOrEmpty(title), "Title is required");
             DomainExceptionValidation.When(string.IsNullOrEmpty(description), "Description is required");
