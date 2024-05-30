@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\DeleteJob\" />
-    <Folder Include="Commands\UpdateJob\" />
+    <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.9.1" />
-    <PackageReference Include="MediatR" Version="12.2.0" />
+    <ProjectReference Include="..\JobsList.Domain\JobsList.Domain.csproj" />
+    <ProjectReference Include="..\JobsList.Infrastructure\JobsList.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
