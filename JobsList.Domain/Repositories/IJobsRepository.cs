@@ -5,7 +5,7 @@ namespace JobsList.Domain.Repositories
     public interface IJobsRepository
     {
         Task CreateAsync(Jobs job);
-        Task<IList<Jobs>> GetAllAsync();
+        Task<List<Jobs>> GetAllAsync();
         Task<Jobs> GetByIdAsync(int id);
         Task SaveChangesAsync();
     }

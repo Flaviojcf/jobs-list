@@ -15,7 +15,7 @@ namespace JobsList.Infrastructure.Persistance.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IList<Jobs>> GetAllAsync()
+        public async Task<List<Jobs>> GetAllAsync()
         {
             return await _dbContext.Jobs.Where(j => j.IsActive).ToListAsync();
         }
