@@ -1,4 +1,6 @@
+using JobsList.Domain.Repositories;
 using JobsList.Infrastructure.Persistance;
+using JobsList.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<JobsListDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddScoped<IJobsRepository, JobsRepository>();
 
 
 var app = builder.Build();
