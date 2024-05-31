@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  jobslist.api:
+    image: ${DOCKER_REGISTRY-}jobslistapi
+    build:
+      context: .
+      dockerfile: JobsList.API/Dockerfile
