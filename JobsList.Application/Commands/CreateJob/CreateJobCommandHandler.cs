@@ -11,8 +11,6 @@ namespace JobsList.Application.Commands.CreateJob
         {
             var job = new Jobs(request.Title, request.Description, request.Location, request.Salary);
 
-            job.Active();
-
             await _jobsRepository.CreateAsync(job);
 
             return job.Id;
