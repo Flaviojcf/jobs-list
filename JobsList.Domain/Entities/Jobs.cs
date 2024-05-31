@@ -17,12 +17,13 @@ namespace JobsList.Domain.Entities
         public string Description { get; private set; }
         public string Location { get; private set; }
         public decimal Salary { get; private set; }
-        public bool IsActive { get; private set; }
+        public bool IsActive { get; private set; } = true;
 
         public void Active()
         {
             IsActive = true;
         }
+
         public void DeActive()
         {
             IsActive = false;

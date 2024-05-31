@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.Domain", "JobsList.Domain\JobsList.Domain.csproj", "{FC6A7F77-8B53-4EC4-8518-C29A1D81E562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobsList.Domain", "JobsList.Domain\JobsList.Domain.csproj", "{FC6A7F77-8B53-4EC4-8518-C29A1D81E562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.Infrastructure", "JobsList.Infrastructure\JobsList.Infrastructure.csproj", "{C807AB31-8778-4A25-9744-53631F05E70E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobsList.Infrastructure", "JobsList.Infrastructure\JobsList.Infrastructure.csproj", "{C807AB31-8778-4A25-9744-53631F05E70E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.API", "JobsList.API\JobsList.API.csproj", "{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobsList.API", "JobsList.API\JobsList.API.csproj", "{1AB3DFE2-0BC3-445B-93B0-5E09F1721544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsList.Application", "JobsList.Application\JobsList.Application.csproj", "{750E4BF2-E259-40AF-80CD-307ECBBFFAFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobsList.Application", "JobsList.Application\JobsList.Application.csproj", "{750E4BF2-E259-40AF-80CD-307ECBBFFAFA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F6D77864-C6A7-49A7-A5F4-D4C0CF605A41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{750E4BF2-E259-40AF-80CD-307ECBBFFAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{750E4BF2-E259-40AF-80CD-307ECBBFFAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{750E4BF2-E259-40AF-80CD-307ECBBFFAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D77864-C6A7-49A7-A5F4-D4C0CF605A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D77864-C6A7-49A7-A5F4-D4C0CF605A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D77864-C6A7-49A7-A5F4-D4C0CF605A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D77864-C6A7-49A7-A5F4-D4C0CF605A41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
