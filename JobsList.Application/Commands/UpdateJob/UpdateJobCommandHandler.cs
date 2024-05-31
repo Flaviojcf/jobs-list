@@ -12,6 +12,8 @@ namespace JobsList.Application.Commands.UpdateJob
 
             job.Update(request.Title, request.Description, request.Location, request.Salary);
 
+            await _jobsRepository.SaveChangesAsync();
+
             return Unit.Value;
         }
     }
