@@ -1,4 +1,5 @@
-﻿using JobsList.Domain.Repositories;
+﻿using JobsList.Application.Exceptions;
+using JobsList.Domain.Repositories;
 using MediatR;
 
 namespace JobsList.Application.Commands.UpdateJob
@@ -9,6 +10,11 @@ namespace JobsList.Application.Commands.UpdateJob
         public async Task<Unit> Handle(UpdateJobCommand request, CancellationToken cancellationToken)
         {
             var job = await _jobsRepository.GetByIdAsync(request.Id);
+
+            if (job == null)
+            {
+                throw new NotFoundException($"O job com o id {request.Id} não foi encontrado");
+            }
 
             job.Update(request.Title, request.Description, request.Location, request.Salary);
 

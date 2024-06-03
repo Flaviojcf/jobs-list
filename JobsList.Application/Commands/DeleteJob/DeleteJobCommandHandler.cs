@@ -1,4 +1,5 @@
-﻿using JobsList.Domain.Repositories;
+﻿using JobsList.Application.Exceptions;
+using JobsList.Domain.Repositories;
 using MediatR;
 
 namespace JobsList.Application.Commands.DeleteJob
@@ -9,6 +10,12 @@ namespace JobsList.Application.Commands.DeleteJob
         public async Task<Unit> Handle(DeleteJobCommand request, CancellationToken cancellationToken)
         {
             var job = await _jobsRepository.GetByIdAsync(request.Id);
+
+            if (job == null)
+            {
+                throw new NotFoundException($"O job com o id {request.Id} não foi encontrado");
+            }
+
             job.DeActive();
 
             await _jobsRepository.SaveChangesAsync();
