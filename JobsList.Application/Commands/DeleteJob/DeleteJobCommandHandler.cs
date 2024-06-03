@@ -11,7 +11,7 @@ namespace JobsList.Application.Commands.DeleteJob
         {
             var job = await _jobsRepository.GetByIdAsync(request.Id);
 
-            if (job == null)
+            if (job == null || job.IsActive == false)
             {
                 throw new NotFoundException($"O job com o id {request.Id} não foi encontrado");
             }

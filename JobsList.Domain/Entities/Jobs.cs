@@ -27,6 +27,7 @@ namespace JobsList.Domain.Entities
         public void DeActive()
         {
             IsActive = false;
+            UpdatedAt = DateTime.Now;
         }
 
         public void Update(string title, string description, string location, decimal salary)

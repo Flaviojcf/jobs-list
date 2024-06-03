@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using JobsList.Application.Commands.CreateJob;
+﻿using JobsList.Application.Commands.CreateJob;
 using JobsList.Application.Commands.DeleteJob;
 using JobsList.Application.Commands.UpdateJob;
 using JobsList.Application.Exceptions;
@@ -12,12 +11,9 @@ namespace JobsList.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class JobsController(IMediator mediator, IValidator<UpdateJobCommand> updateJobValidator,
-                                IValidator<CreateJobCommand> createJobValidator) : ControllerBase
+    public class JobsController(IMediator mediator) : ControllerBase
     {
         private readonly IMediator _mediator = mediator;
-        private readonly IValidator<UpdateJobCommand> _updateJobValidator = updateJobValidator;
-        private readonly IValidator<CreateJobCommand> _createJobValidator = createJobValidator;
 
         [HttpGet]
         public async Task<IActionResult> GetAll(string query)
@@ -49,16 +45,17 @@ namespace JobsList.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateJobCommand command)
         {
-            var validationResult = await _createJobValidator.ValidateAsync(command);
-
-            if (!validationResult.IsValid)
+            try
             {
-                return BadRequest(validationResult.Errors);
+                var id = await _mediator.Send(command);
+
+                return CreatedAtAction(nameof(GetById), new { id }, command);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
 
-            var id = await _mediator.Send(command);
-
-            return CreatedAtAction(nameof(GetById), new { id }, command);
         }
 
         [HttpDelete("{id}")]
@@ -84,13 +81,6 @@ namespace JobsList.API.Controllers
 
             try
             {
-                var validationResult = await _updateJobValidator.ValidateAsync(command);
-
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(validationResult.Errors);
-                }
-
                 await _mediator.Send(command);
 
                 return NoContent();
