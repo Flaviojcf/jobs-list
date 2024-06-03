@@ -17,6 +17,7 @@ This is a simple project to implement some clean architectural patterns and prop
 - MediatR
 - FluentValidation
 - Swagger
+- Docker
 
 
 ## Contact
