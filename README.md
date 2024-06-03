@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Flaviojcf/jobs-list">
-    <img src="./jobs-swagger.png" alt="swagger-png">
+    <img src="./public/jobs-swagger.png" alt="swagger-png">
   </a>
 </div>
 
