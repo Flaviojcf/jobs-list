@@ -1,4 +1,5 @@
-﻿using JobsList.Domain.Entities;
+﻿using JobsList.Application.Exceptions;
+using JobsList.Domain.Entities;
 using JobsList.Domain.Repositories;
 using MediatR;
 
@@ -9,7 +10,14 @@ namespace JobsList.Application.Queries.GetJobById
         private readonly IJobsRepository _jobsRepository = jobsRepository;
         public async Task<Jobs> Handle(GetJobByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _jobsRepository.GetByIdAsync(request.Id);
+            var job = await _jobsRepository.GetByIdAsync(request.Id);
+
+            if (job == null)
+            {
+                throw new NotFoundException($"O job com o id {request.Id} não foi encontrado");
+            }
+
+            return job;
         }
     }
 }
